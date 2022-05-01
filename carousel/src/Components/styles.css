@@ -3,12 +3,23 @@
   height: 300px;
 }
 
+.slide{
+  opacity: 0;
+  transition-duration: 1s ease;
+  user-select: none
+}
+
+.slide.active{
+  opacity: 1;
+  transition-duration: 1s;
+}
+
 .styled-slider{
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform .6s ease,-webkit-transform .6s ease
+  /* transition: transform .6s ease,-webkit-transform .6s ease */
 
 }
 
@@ -38,4 +49,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.img-desc{
+  position: absolute;
+  top: 200px;
+  color: red;
+  left: 431px;
+}
+
+.img-desc h1{
+  margin: 0;
+}
+
+.img-desc h3{
+  margin: 5px;
 }

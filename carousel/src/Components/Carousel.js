@@ -19,21 +19,32 @@ const Carousel = ({ slides }) => {
 
   return (
     <div className="styled-slider">
-      <div id="left-arrow" >
-        <FaChevronLeft
-          onClick={prevSlide}
-        />
-      </div>
-      <div id="right-arrow">
-        <FaChevronRight
-          onClick={nextSlide}
-        />
-      </div>
+      {
+        slides.length === 1 ? null :
+          <>
+            <div id="left-arrow" >
+              <FaChevronLeft
+                onClick={prevSlide}
+              />
+            </div>
+            <div id="right-arrow">
+              <FaChevronRight
+                onClick={nextSlide}
+              />
+            </div></>
+      }
+
       {slides.map((slide, index) => {
         return (
-          <div key={index}>
+          <div className={index === current ? "slide active" : "slide"} key={index}>
             {index === current && (
-              <img className="slide-image" src={slide.image} alt="" />
+              <>
+                <div className="img-desc">
+                  <h1>{slide.title}</h1>
+                  <h3>{slide.subTitle}</h3>
+                </div>
+                <img className="slide-image" src={slide.image} alt="" />
+              </>
             )}
           </div>
         );
