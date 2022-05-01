@@ -1,4 +1,4 @@
-1. git clone main branch
+1. git clone master branch
 2. cd backend 
 3. npm install dependancies
 4. node index.js
