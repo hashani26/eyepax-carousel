@@ -43,7 +43,7 @@ const Carousel = ({ slides }) => {
                   <h1>{slide.title}</h1>
                   <h3>{slide.subTitle}</h3>
                 </div>
-                <img className="slide-image" src={slide.image} alt="" />
+                <img className="slide-image" src={ `data:image/jpg;base64, ${slide.image}`} alt="" />
               </>
             )}
           </div>

@@ -17,6 +17,7 @@ app.get('/api/carousel', (req, res) => {
     }
     res.send(DATA.slice(0, slides))
   } catch (error) {
+    console.log('error', error);
     res.status(500).json({
       success: false,
       error: 'Internal Server Error'
